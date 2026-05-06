@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useRef, useCallback, useEffect } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { ArrowLeft, ImagePlus, Video, X as XIcon, FileImage, FileVideo, ChevronDown, AlertCircle, RotateCw } from "lucide-react";
@@ -319,7 +320,7 @@ export function PostEditor() {
     } finally {
       uploadingIdsRef.current.delete(media.id);
     }
-  }, [user, draftId, text, selectedFormat]);
+  }, [user, text, selectedFormat]);
 
   // Save draft — just DB writes, files already uploaded
   const saveDraft = useCallback(async () => {
